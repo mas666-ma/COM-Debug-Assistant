@@ -1,0 +1,5 @@
+C:\Users\64249\Desktop\mas666-ma\COM-Debug-Assistant\COM-Debug-Assistant\obj\Debug\netcoreapp3.1\COM-Debug-Assistant.csprojAssemblyReference.cache
+C:\Users\64249\Desktop\mas666-ma\COM-Debug-Assistant\COM-Debug-Assistant\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\64249\Desktop\mas666-ma\COM-Debug-Assistant\COM-Debug-Assistant\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\64249\Desktop\mas666-ma\COM-Debug-Assistant\COM-Debug-Assistant\obj\Debug\netcoreapp3.1\COM-Debug-Assistant_MarkupCompile.cache
+C:\Users\64249\Desktop\mas666-ma\COM-Debug-Assistant\COM-Debug-Assistant\obj\Debug\netcoreapp3.1\COM-Debug-Assistant_MarkupCompile.lref

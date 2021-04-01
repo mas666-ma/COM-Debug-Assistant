@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:COM_Debug_Assistant"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="串口助手" Height="450" Width="800">
     <Grid>
-
-    </Grid>
+		<GroupBox x:Name="set_group" Header="串口配置" Height="350" Width="200" Margin="10,18,590,67">
+			<Grid >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="40"/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="20"/>
+					<RowDefinition Height="20"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Label Grid.Row="0" Grid.Column="0" Content="串口" FontSize="8" FontWeight="Heavy"/>
+			</Grid>
+		</GroupBox>
+	</Grid>
 </Window>
