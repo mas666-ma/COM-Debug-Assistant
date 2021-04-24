@@ -433,24 +433,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\64249\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\mas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\64249\\Desktop\\mas666-ma\\COM-Debug-Assistant\\COM-Debug-Assistant\\COM-Debug-Assistant.csproj",
+      "projectUniqueName": "C:\\Users\\mas\\Desktop\\mas666-ma\\COM-Debug-Assistant\\COM-Debug-Assistant\\COM-Debug-Assistant.csproj",
       "projectName": "COM-Debug-Assistant",
-      "projectPath": "C:\\Users\\64249\\Desktop\\mas666-ma\\COM-Debug-Assistant\\COM-Debug-Assistant\\COM-Debug-Assistant.csproj",
-      "packagesPath": "C:\\Users\\64249\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\64249\\Desktop\\mas666-ma\\COM-Debug-Assistant\\COM-Debug-Assistant\\obj\\",
+      "projectPath": "C:\\Users\\mas\\Desktop\\mas666-ma\\COM-Debug-Assistant\\COM-Debug-Assistant\\COM-Debug-Assistant.csproj",
+      "packagesPath": "C:\\Users\\mas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mas\\Desktop\\mas666-ma\\COM-Debug-Assistant\\COM-Debug-Assistant\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\64249\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\mas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -499,7 +494,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
