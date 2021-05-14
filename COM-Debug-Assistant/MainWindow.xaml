@@ -18,14 +18,26 @@
 					<RowDefinition Height="20"/>
 					<RowDefinition Height="20"/>
 					<RowDefinition Height="20"/>
+					<RowDefinition Height="20"/>
+					<RowDefinition Height="20"/>
 					<RowDefinition/>
 				</Grid.RowDefinitions>
 				<Label Grid.Row="0" Grid.Column="0" Content="串口" FontSize="8" FontWeight="Heavy"/>
-				<ComboBox Grid.Row="0" Grid.Column="1"></ComboBox>
+				<ComboBox Grid.Row="0" Grid.Column="1" Name="portcb"></ComboBox>
+				<Button Grid.Row="0" Grid.Column="2" Content="打开串口" Name="portb"></Button>
 				<Label Grid.Row="1" Grid.Column="0" Content="波特率" FontSize="8" FontWeight="Heavy"></Label>
-				<ComboBox Grid.Row="1" Grid.Column="1"></ComboBox>
+				<ComboBox Grid.Row="1" Grid.Column="1" Name="baudcb"></ComboBox>
+				<Label Grid.Row="1" Grid.Column="2" Content=" "></Label>
+				<Label Grid.Row="2" Grid.Column="0" Content="数据位" FontSize="8" FontWeight="Heavy"></Label>
+				<ComboBox Grid.Row="2" Grid.Column="1" Name="databitscb"></ComboBox>
+				<Label Grid.Row="3" Grid.Column="0" Content="停止位" FontSize="8" FontWeight="Heavy"></Label>
+				<ComboBox Grid.Row="3" Grid.Column="1" Name="stopbitscb"></ComboBox>
+				<Label Grid.Row="4" Grid.Column="0" Content="校验位" FontSize="8" FontWeight="Heavy"></Label>
+				<ComboBox Grid.Row="4" Grid.Column="1" Name="checkbitscb"></ComboBox>
 			</Grid>
 		</GroupBox>
-		<TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="275,19,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="181" Width="398"/>
+		<TextBox x:Name="receivetb" HorizontalAlignment="Left" Margin="276,29,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="181" Width="398"/>
+		<Button x:Name="receiveclearb" Content="清空接收区" HorizontalAlignment="Left" Margin="276,217,0,0" VerticalAlignment="Top" Click="clear"/>
+		<TextBox x:Name="transfertb" HorizontalAlignment="Left" Margin="276,254,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="398" Height="78"/>
 	</Grid>
 </Window>

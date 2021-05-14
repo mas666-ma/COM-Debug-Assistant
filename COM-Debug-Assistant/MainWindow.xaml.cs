@@ -30,17 +30,103 @@ namespace COM_Debug_Assistant
 
 			//
 			timer.Interval = TimeSpan.FromMilliseconds(500);
-			timer.Tick += Timer_Tick;
+			timer.Tick += TimerTick;
 			timer.Start();
 
-			//
-			
+            //
+            InitSerial();	
 
 		}
+        private void InitSerial()
+        {
+            portcb.Items.Clear();
 
-		private void Timer_Tick(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-	}
+            string[] ports = SerialPort.GetPortNames();//获取当前计算机的串行端口名的数组。
+
+            for (int index = 0; index < ports.Length; index++)
+            {
+                portcb.Items.Add(ports[index]);//添加item
+                portcb.SelectedIndex = index; //设置显示的item索引
+            }
+
+            baudcb.SelectedIndex = 1;
+        }
+        private void TimerTick(object sender, EventArgs e)
+        {
+            // 定时更新串口信息
+            InitSerial();
+        }
+
+        public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)//读取下位机的数据，显示在textBlock中
+        {
+            int len = this._serialPort.BytesToRead;
+            byte[] buffer = new byte[len];
+
+            this._serialPort.Read(buffer, 0, len);
+
+            //string strData = BitConverter.ToString(buffer, 0, len);  // 16进制
+            string strData = Encoding.Default.GetString(buffer); // 字符串
+
+            Dispatcher.Invoke(() =>
+            {
+                //this.receivetb.Text += strData;
+                //this.receivetb.Text += "-";//字符分隔-
+
+                this.receivetb.AppendText(strData);
+            });
+        }
+
+        private void portbClick(object sender, RoutedEventArgs s)
+        {
+            string strContent = this.portb.Content.ToString();
+            if (strContent == "打开串口")
+            {
+                try
+                {
+                    _serialPort.PortName = portcb.SelectedItem.ToString();//串口号
+                    ComboBoxItem seletedItem = (ComboBoxItem)this.baudcb.SelectedItem;
+                    _serialPort.BaudRate = Convert.ToInt32(seletedItem.Content.ToString());//波特率
+                    _serialPort.DataBits = 8;//数据位
+                    _serialPort.StopBits = StopBits.One;//停止位
+                    _serialPort.Parity = Parity.None;//校验位
+
+                    _serialPort.Open();
+                    _serialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);//添加数据接收事件
+                    _serialPort.DataReceived += DataReceivedHandler;
+
+                    portb.Content = "关闭串口";
+                }
+                catch
+                {
+                    MessageBox.Show("打开串口失败", "错误");
+                }
+            }
+            else
+            {
+                try
+                {
+                    _serialPort.DataReceived -= DataReceivedHandler;
+                    _serialPort.Close();
+                    portb.Content = "打开串口";
+                }
+                catch
+                {
+                    MessageBox.Show("关闭串口失败", "错误");
+                }
+            }
+        }
+
+        private void clear(object sender, RoutedEventArgs s)
+        {
+            // 清空数据
+            receivetb.Clear();
+        }
+
+        private void sendBtnClick(object sender, RoutedEventArgs s)
+        {
+
+        }
+
+        
+    }	
 }
