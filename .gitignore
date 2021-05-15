@@ -18,7 +18,7 @@ __Previews/
 .vscode/
 .eide/
 .vs/
-bin
+bin/
 obj/
 *.user
 .History/
