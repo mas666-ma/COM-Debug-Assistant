@@ -27,20 +27,17 @@ namespace COM_Debug_Assistant
 		public MainWindow()
 		{
 			InitializeComponent();
-
 			//
-			timer.Interval = TimeSpan.FromMilliseconds(500);
-			timer.Tick += TimerTick;
+			timer.Interval = TimeSpan.FromMilliseconds(500); //计时器刻度之间的时间段：500ms
+			timer.Tick += TimerTickHandler; //tick时间处理程序
 			timer.Start();
-
             //
-            InitSerial();	
+            ReadSerial();	
 
 		}
-        private void InitSerial()
+        private void ReadSerial() //读取串口
         {
             portcb.Items.Clear();
-
             string[] ports = SerialPort.GetPortNames();//获取当前计算机的串行端口名的数组。
 
             for (int index = 0; index < ports.Length; index++)
@@ -51,10 +48,10 @@ namespace COM_Debug_Assistant
 
             baudcb.SelectedIndex = 1;
         }
-        private void TimerTick(object sender, EventArgs e)
+        private void TimerTickHandler(object sender, EventArgs e) //tick时间处理程序
         {
             // 定时更新串口信息
-            InitSerial();
+            ReadSerial();
         }
 
         public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)//读取下位机的数据，显示在textBlock中
